@@ -2,14 +2,14 @@
 {% load static %}
 {% block css %}
     <link href="http://ubislider.com/css/ubislider.min.css?v=1.0.0.1" rel="stylesheet" type="text/css">
-    <link href="{% static 'ShoppersPoint/css/product-page-css.css' %}">
+    <link rel="stylesheet" href="{% static 'ShoppersPoint/css/base-page-css.css' %}">
 {% endblock css %}
 
 {% block body %}
     <div class="container" style="margin-top: 75px;">
         <div class="row text-center">
             <div class="col-md-4">
-                <div class="ubislider-image-container" data-ubislider="#slider4" id="imageSlider4">
+                <div class="thumbnail">
                     <a>
                         <img src="{{ image_list }}">
                     </a>

@@ -2,7 +2,7 @@
     {% block title %}ShoppersPoint{% endblock %}
     {% load static %}
     {% block css %}
-    <link rel="stylesheet" href="{% static 'ShoppersPoint/css/category-page-css.css' %}">
+    <link rel="stylesheet" href="{% static 'ShoppersPoint/css/base-page-css.css' %}">
     {% endblock css %}
 {% block body %}
 <div class="container">
@@ -29,8 +29,8 @@
                         <div class="product-info">
                             <h4><a href="/home/product/{{ product.product_id_id }}">{{ product.product_name }}</a></h4>
                             <div class="info-product-price">
-                                <span class="item_price">₹{{ product.discounted_price }}</span>
-                                <del>₹{{ product.price }}</del>
+                                <span class="item_price">${{ product.discounted_price }}</span>
+                                <del>${{ product.price }}</del>
                             </div>
                         </div>
                     </div>
