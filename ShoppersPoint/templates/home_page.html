@@ -31,11 +31,14 @@
                                                                                        src="{{ mobile.image_src }}"></a>
                                                     <div class="detail text-center">
                                                         <h5><b>{{ mobile.product_name }}</b></h5>
-                                                        <h6>Extra <i class="fa fa-inr" aria-hidden="true"></i>&nbsp;50%
+                                                        <h6>Extra 50%
                                                             off
                                                         </h6>
-                                                        <p class="text-muted">Now ${{ mobile.price }}</p>
-                                                    </div>
+
+                                                        <p class="text-muted">Now ${{ mobile.discounted_price }}</p>
+
+                                                      
+                                   </div>
                                                 </div>
                                                 {% elif forloop.counter|divisibleby:"4" %}
                                                 <div class="col-md-3 col-sm-6">
@@ -43,10 +46,11 @@
                                                                                        src="{{ mobile.image_src }}"></a>
                                                     <div class="detail text-center">
                                                         <h5><b>{{ mobile.product_name }}</b></h5>
-                                                        <h6>Extra <i class="fa fa-inr" aria-hidden="true"></i>&nbsp;50%
+                                                        <h6>Extra 50%
                                                             off
                                                         </h6>
-                                                        <p class="text-muted">Now ${{ mobile.price }}</p>
+
+                                                        <p class="text-muted">Now ${{ mobile.discounted_price }}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -57,25 +61,70 @@
                                                                                src="{{ mobile.image_src }}"></a>
                                             <div class="detail text-center">
                                                 <h5><b>{{ mobile.product_name }}</b></h5>
-                                                <h6>Extra <i class="fa fa-inr" aria-hidden="true"></i>&nbsp;50%
+                                                <h6>Extra 50%
                                                     off
                                                 </h6>
-                                                <p class="text-muted">Now ${{ mobile.price }}</p>
+
+                                                <p class="text-muted">Now ${{ mobile.discounted_price }}</p>
+                                    
                                             </div>
                                         </div>
 
                                     {% endif %}
                                 {% endfor %}
-
                             {% endif %}
+                            {% if laptop_list.0.product_category_id == category.category_type  %}
+                                {% for laptop in laptop_list %}
+                                    {% if forloop.counter0|divisibleby:"4" %}
+                                        <div class="item {% if forloop.first %}active{% endif %}">
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-6">
+                                                    <a class="thumbnail" href="/home/product/{{ laptop.product_id_id }}"><img id="{{ category.category_type }}"
+                                                                                       src="{{ laptop.image_src }}"></a>
+                                                    <div class="detail text-center">
+                                                        <h5><b>{{ laptop.product_name }}</b></h5>
+                                                        <h6>Extra 10%
+                                                            off
+                                                        </h6>
+                                                        <p class="text-muted">Now ${{ laptop.discounted_price }}</p>
+                                                    </div>
+                                                </div>
+                                                {% elif forloop.counter|divisibleby:"4" %}
+                                                <div class="col-md-3 col-sm-6">
+                                                    <a class="thumbnail" href="/home/product/{{ laptop.product_id_id }}"><img id="{{ category.category_type }}"
+                                                                                       src="{{ laptop.image_src }}"></a>
+                                                    <div class="detail text-center">
+                                                        <h5><b>{{ laptop.product_name }}</b></h5>
+                                                        <h6>Extra 10% off
+                                                        </h6>
+                                                        <p class="text-muted">Now ${{ laptop.discounted_price}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-md-3 col-sm-6">
+                                            <a class="thumbnail" href="/home/product/{{ laptop.product_id_id }}"><img id="{{ category.category_type }}"
+                                                                               src="{{ laptop.image_src }}"></a>
+                                            <div class="detail text-center">
+                                                <h5><b>{{ laptop.product_name }}</b></h5>
+                                                <h6>Extra 10%
+                                                    off
+                                                </h6>
+                                                <p class="text-muted">Now ${{ laptop.discounted_price }}</p>
+                                            </div>
+                                        </div>
 
-                            
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             </div>
+
         {% endfor %}
     {% endif %}
 {% endblock %}
