@@ -9,7 +9,7 @@ body {
     /*font-family: 'Monospaced', cursive;*/
 }
 nav {
-    background-color: #0099FF;
+    background-color: rgb(12, 5, 114);
     min-height: 80px !important;
     padding-top: 15px;
 }
@@ -17,6 +17,7 @@ nav a{
     color: #ffffff;
     font-size: 20px;
 }
+
 nav a:hover{
     color: #FFFF00;
     background-color: #0099FF;

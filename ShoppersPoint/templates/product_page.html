@@ -1,4 +1,8 @@
 {% extends 'base_kompany.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'ShoppersPoint/css/base-page-css.css' %}">
+{% endblock css %}
 {% block body %}
     {% if product_list %}
         <div class="row">
