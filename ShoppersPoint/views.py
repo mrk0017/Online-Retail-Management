@@ -103,8 +103,12 @@ def product_page(request, product_id):
 
     num = int(Products.objects.get(product_id=product_id).image_count)
 
-    image_list = '/static/ShoppersPoint/ShoppersPoint/images/' + category_type + 's/' + str(product_id) + '.jpg'
-
+    #image_list = '/static/ShoppersPoint/ShoppersPoint/images/' + category_type + 's/' + str(product_id) + '.jpg'
+    
+    image_list = []
+    for i in range(0, num):
+        image_list += ['/static/ShoppersPoint/ShoppersPoint/images/' + category_type + 's/' + str(product_id) + '.jpg']
+        
     cont_dict = {
         'product_list': products,
         'image_list': image_list,
