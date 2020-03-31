@@ -17,10 +17,10 @@ def home_page(request):
     mobiles = Mobiles.objects.all()
     laptops = Laptops.objects.all()[:24]
     for mobile in mobiles:
-        mobile.image_src = '../static/ShoppersPoint/ShoppersPoint/images/Mobiles/' + str(mobile.product_id_id) + '.jpg'
+        mobile.image_src = '../static/ShoppersPoint/ShoppersPoint/images/mobiles/' + str(mobile.product_id_id) + '.jpg'
         print(mobile.image_src)
     for laptop in laptops:
-        laptop.image_src = '../static/ShoppersPoint/ShoppersPoint/images/Laptops' + str(laptop.product_id_id) + '-0.jpeg'
+        laptop.image_src = '../static/ShoppersPoint/ShoppersPoint/images/laptops/' + str(laptop.product_id_id) + '.jpg'
     # if request.user.is_authenticated:
     #     print(Cart.objects.annotate(product_count=Count('product_id')).filter(user=request.user).query)
     #     product_count = Cart.objects.annotate(product_count=Count('product_id')).filter(user=request.user)
@@ -60,7 +60,7 @@ def category_view(request, category, page_index=1):
         for product in products:
             if len(product.product_name) > 25:
                 product.product_name = product.product_name[:25] + '...'
-            product.image_src = '/static/ShoppersPoint/ShoppersPoint/images/Mobiles/' + str(product.product_id_id) + '.jpg'
+            product.image_src = '/static/ShoppersPoint/ShoppersPoint/images/mobiles/' + str(product.product_id_id) + '.jpg'
     if category == 'laptop':
         prev_link = '/home/laptop/' + str(prev_page)
         next_link = '/home/laptop/' + str(next_page)
@@ -68,7 +68,7 @@ def category_view(request, category, page_index=1):
         for product in products:
             if len(product.product_name) > 25:
                 product.product_name = product.product_name[:25] + '...'
-            product.image_src = '/static/kompany/images/laptops/' + str(product.product_id_id) + '-0.jpeg'
+            product.image_src = '/static/ShoppersPoint/ShoppersPoint/images/laptops/' + str(product.product_id_id) + '.jpg'
     page_list = {'prev': prev_link, 'next': next_link}
     if len(products) == 0:
         cont_dict = {
@@ -98,13 +98,13 @@ def product_page(request, product_id):
     if category_type == 'laptop':
         products = Laptops.objects.get(product_id=product_id)
 
-    if category_type == 'Mobile':
+    if category_type == 'mobile':
         products = Mobiles.objects.get(product_id=product_id)
 
     num = int(Products.objects.get(product_id=product_id).image_count)
 
-    image_list = '/static/ShoppersPoint/ShoppersPoint/images/Mobiles/' + str(product_id) + '.jpg'
-    
+    image_list = '/static/ShoppersPoint/ShoppersPoint/images/' + category_type + 's/' + str(product_id) + '.jpg'
+
     cont_dict = {
         'product_list': products,
         'image_list': image_list,
