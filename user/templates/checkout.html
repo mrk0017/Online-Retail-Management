@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Kompany | Cart</title>
+    <title>ShoppersPoint | Cart</title>
 
     <link rel="stylesheet" type="text/css" href="/static/user/jakaba/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -284,7 +284,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><strong>Order placed on {% now 'j/m/Y' %}</strong></h3>
+                                <h3 class="panel-title"><strong>Order placed on {% now 'm/j/Y' %}</strong></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -305,7 +305,7 @@
                                                     <div class="media">
                                                         <a class="thumbnail pull-left" href="#"> <img
                                                                 class="media-object"
-                                                                src="/static/kompany/images/{{ item.product.category_type_id }}s/{{ item.product_id }}-0.jpeg"
+                                                                src="/static/ShoppersPoint/ShoppersPoint/images/{{ item.product.category_type_id }}s/{{ item.product_id }}.jpg"
                                                                 style="width: 72px; height: 72px;">
                                                         </a>
                                                         <div class="media-body">
@@ -333,13 +333,13 @@
                             <h3 class="text-center">Order Summary</h3>
                             <hr>
                             <div class="pull-left"><h4>Subtotal</h4></div>
-                            <div class="pull-right"><h4 class="text-right">₹{% multiply price 1 %}</h4></div>
+                            <div class="pull-right"><h4 class="text-right">${% multiply price 1 %}</h4></div>
                             <div class="clearfix"></div>
-                            <div class="pull-left"><h4>GST @18%</h4></div>
-                            <div class="pull-right"><h4 class="text-right">₹{% multiply price .18 %}</h4></div>
+                            <div class="pull-left"><h4>Tax</h4></div>
+                            <div class="pull-right"><h4 class="text-right">${% multiply price .09 %}</h4></div>
                             <div class="clearfix"></div>
                             <div class="pull-left"><h4>Order Total</h4></div>
-                            <div class="pull-right"><h4 class="text-right">₹{% multiply price 1.18 %}</h4></div>
+                            <div class="pull-right"><h4 class="text-right">${% multiply price 1.09 %}</h4></div>
                             <div class="clearfix"></div>
                         </div>
                         <div class="col-md-4 offset-md-1">
