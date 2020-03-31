@@ -53,7 +53,7 @@ def category_view(request, category, page_index=1):
     next_page = int(page_no + 1)
     start_index = int((page_no * 12) - 12)
     end_index = int(page_no * 12)
-    if category == 'Mobile':
+    if category == 'mobile':
         prev_link = '/home/mobile/' + str(prev_page)
         next_link = '/home/mobile/' + str(next_page)
         products = Mobiles.objects.all()[start_index:end_index]
