@@ -4,11 +4,11 @@ body {
     margin: 20px;
     padding-top: 10rem;
     background: #fff;
-    /*font-family: 'Monospaced', cursive;*/
+    overflow-x: hidden;
 }
 
 nav {
-    background-color: #0099FF;
+    background-color: rgb(12, 5, 114);
     min-height: 80px !important;
     padding-top: 15px;
 }
@@ -79,54 +79,10 @@ div h2 {
 /* carousel */
 .media-carousel {
     margin-top: 2em;
-
     margin-bottom: 0;
     padding: 0px 10px 10px 10px;
 }
 
-/* Previous button  */
-.media-carousel .carousel-control.left {
-    left: -5px !important;
-    background-image: none;
-    border: 0px solid #FFFFFF;
-    border-radius: 8px;
-    height: 200px;
-    opacity: 1 !important;
-    width: 50px;
-    margin-top: 60px;
-}
-
-.media-carousel .carousel-control.right {
-    right: 0px !important;
-    background-image: none;
-    border: 0px solid #FFFFFF;
-    border-radius: 8px;
-    height: 200px;
-    opacity: 100 !important;
-    width: 50px;
-    margin-top: 60px;
-
-}
-
-.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
-    color: #000;
-}
-
-.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
-    color: #000;
-}
-
-.media-carousel img#mobile {
-    height: 200px !important;
-}
-
-.media-carousel img#laptop {
-    height: 150px !important;
-}
-
-body {
-    overflow-x: hidden;
-}
 
 .detail h5 {
     font-family: play;
@@ -139,9 +95,9 @@ body {
     font-family: roboto;
 }
 
+/* pop image on hover */
 .thumbnail img:hover {
     transform: scale(1.1);
-    /* transition: 0.5s ease-in-out;*/
 
 }
 
@@ -149,11 +105,13 @@ body {
     margin-top: 125px;
 }
 
+/* price */
 .text-muted {
     font-size: 20px;
     color: #000;
 }
 
+/* search.html list */
 .list-group-item {
     margin: 2px;
 }
